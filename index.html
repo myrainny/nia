@@ -4,148 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Batavia Bloom Store</title>
+
 <style>
-    /* Menambahkan smooth scroll agar perpindahan halaman halus */
-    html {
-        scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
 
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #f5f0e6;
-        color: #4b2e2e;
-    }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f0e6;
+    color: #4b2e2e;
+}
 
-    header {
-        background-color: #6b3e26;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 50px;
-        position: sticky; /* Menu tetap di atas saat di-scroll */
-        top: 0;
-        z-index: 1000;
-    }
+header {
+    background-color: #6b3e26;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 22px;
-        letter-spacing: 1px;
-    }
+header h1 { margin: 0; font-size: 22px; }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        font-weight: 500;
-    }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
-    nav a:hover {
-        color: #ffd700;
-    }
+nav a:hover { color: #ffd700; }
 
-    .hero {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 80px 60px;
-        background: linear-gradient(135deg, #f5f0e6, #e6d3b3);
-    }
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+    background: linear-gradient(135deg, #f5f0e6, #e6d3b3);
+}
 
-    .hero-text {
-        max-width: 50%;
-    }
+.hero-text { max-width: 50%; }
 
-    .hero-text h2 {
-        font-size: 40px;
-        color: #8b0000;
-        margin-bottom: 10px;
-    }
+.hero-text h2 {
+    font-size: 40px;
+    color: #8b0000;
+}
 
-    /* Bagian Gambar Lingkaran Besar */
-    .hero-image {
-        width: 350px;
-        height: 350px;
-        border-radius: 50%;
-        /* GANTI 'hero.jpg' dengan nama file foto utamamu */
-        background: url('logokel.jpg') center/cover no-repeat, #ccc; 
-        border: 8px solid #6b3e26;
-    }
+.hero-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: url('logokel.jpg') center/cover no-repeat, #ccc;
+    border: 8px solid #6b3e26;
+}
 
-    .section {
-        padding: 80px 50px;
-        text-align: center;
-    }
+.section {
+    padding: 80px 50px;
+    text-align: center;
+}
 
-    .section h3 {
-        font-size: 28px;
-        color: #6b3e26;
-        margin-bottom: 30px;
-    }
+.section h3 {
+    font-size: 28px;
+    color: #6b3e26;
+}
 
-    .menu {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-    .card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 15px;
-        width: 280px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: 0.3s;
-    }
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
 
-    .card:hover {
-        transform: translateY(-10px);
-    }
+.card:hover { transform: translateY(-10px); }
 
-    /* Style untuk gambar di dalam kartu menu */
-    .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-    .card h4 {
-        margin: 10px 0;
-        color: #8b0000;
-        font-size: 20px;
-    }
+.card h4 { color: #8b0000; }
 
-    .toppings span {
-        display: inline-block;
-        background-color: #2e8b57;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        margin: 5px;
-        font-size: 14px;
-    }
+.toppings span {
+    display: inline-block;
+    background-color: #2e8b57;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 5px;
+}
 
-    footer {
-        background-color: #6b3e26;
-        color: white;
-        text-align: center;
-        padding: 40px 20px;
-        margin-top: 50px;
-    }
-
-    footer::before {
-        content: "🎭 🎨";
-        display: block;
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
+footer {
+    background-color: #6b3e26;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -161,35 +131,36 @@
 <section class="hero" id="beranda">
     <div class="hero-text">
         <h2>Cita Rasa Legendaris, Harga Manis</h2>
-        <p>Nikmati kelezatan makanan khas Betawi yang autentik, dibuat dengan resep tradisional dan cita rasa yang menggugah selera. Setiap gigitan membawa kenangan manis budaya Betawi.</p>
+        <p>Nikmati kelezatan makanan khas Betawi.</p>
     </div>
-    <div class="hero-image">
-        </div>
+    <div class="hero-image"></div>
 </section>
 
 <section class="section" id="produk">
     <h3>Menu Spesial</h3>
-    <div class="menu">
-        <div class="card">
-            <a href="https://wa.me/62895321763235?text=Halo%20saya%20mau%20pesan%20Ketan%20Susu%20Lumer%20Rp%2010000" target="_blank">
-                <img src="ketan.png" alt="Ketan Susu">
-            </a>
-            <h4>Ketan Susu Lumer</h4>
-            <p><strong>Rp 10.000</strong></p>
-            <p>Ketan lembut berpadu susu kental manis yang lumer di mulut.</p>
-        </div>
 
-        <div class="card">
-            <a href="https://wa.me/62895321763235?text=Halo%20saya%20mau%20pesan%20Es%20Doger%20Seger%20Rp%207000" target="_blank">
+    <div class="menu">
+        <a href="https://wa.me/62895321763235?text=Halo%20saya%20mau%20pesan%20Ketan%20Susu%20Lumer%20Rp%2010000" target="_blank" style="text-decoration:none; color:inherit;">
+            <div class="card">
+                <img src="ketan.png" alt="Ketan Susu">
+                <h4>Ketan Susu Lumer</h4>
+                <p><strong>Rp 10.000</strong></p>
+                <p>Ketan lembut berpadu susu kental manis.</p>
+            </div>
+        </a>
+
+        <a href="https://wa.me/62895321763235?text=Halo%20saya%20mau%20pesan%20Es%20Doger%20Seger%20Rp%207000" target="_blank" style="text-decoration:none; color:inherit;">
+            <div class="card">
                 <img src="doger.png" alt="Es Doger">
-            </a>
-            <h4>Es Doger Seger</h4>
-            <p><strong>Rp 7.000</strong></p>
-            <p>Minuman segar warna pink dengan topping khas yang manis dan menyegarkan.</p>
-        </div>
+                <h4>Es Doger Seger</h4>
+                <p><strong>Rp 7.000</strong></p>
+                <p>Minuman segar khas Betawi.</p>
+            </div>
+        </a>
+
     </div>
 
-    <h3 style="margin-top: 50px;">Pilihan Topping Premium</h3>
+    <h3 style="margin-top: 50px;">Pilihan Topping</h3>
     <div class="toppings">
         <span>Matcha</span>
         <span>Milo</span>
@@ -199,20 +170,15 @@
     </div>
 </section>
 
-<section class="section" id="tentang" style="background-color: #fff;">
+<section class="section" id="tentang">
     <h3>Tentang Kami</h3>
-    <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
-        Batavia Bloom Store adalah usaha kuliner siswa SMK Negeri 22 Jakarta yang melestarikan jajanan tradisional Betawi dengan sentuhan modern. Kami berkomitmen menyajikan kualitas terbaik dengan harga yang bersahabat bagi kantong pelajar.
-    </p>
+    <p>Batavia Bloom Store adalah usaha kuliner siswa SMK Negeri 22 Jakarta.</p>
 </section>
 
 <footer id="kontak">
     <h3>Hubungi Kami</h3>
-    <p>Lokasi: SMK Negeri 22 Jakarta</p>
-    <p>Instagram: <a href="https://instagram.com/bataviabloom_store" style="color: #ffd700; text-decoration: none;">@bataviabloom_store</a></p>
-    <p>WhatsApp: +62 895 3217 63235</p>
-    <br>
-    <p>&copy; 2026 Batavia Bloom Store. All Rights Reserved.</p>
+    <p>WhatsApp: 0895-3217-63235</p>
+    <p>&copy; 2026 Batavia Bloom Store</p>
 </footer>
 
 </body>
